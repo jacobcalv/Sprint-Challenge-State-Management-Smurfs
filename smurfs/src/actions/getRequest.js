@@ -13,8 +13,8 @@ export function getRequest(){
             .then(res => {
                 dispatch({type: GET_SMURF_SUCCESS, payload: res.data })
             })
-            .catch(err => {
-                dispatch({type: GET_SMURF_ERROR, payload: err})
+            .catch(error => {
+                dispatch({type: GET_SMURF_ERROR, payload: error})
             });
     };
 }

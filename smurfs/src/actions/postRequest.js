@@ -4,16 +4,17 @@ export const POST_SMURF_SUCCESS = 'POST_SMURF_SUCCESS'
 export const POST_SMURF_ERROR= 'POST_SMURF_ERROR'
 
 
-export function postRequest(){
+export function postRequest(smurfData){
     return dispatch => {
-        dispatch({type: POST_SMURF_START})
+        dispatch({type: POST_SMURF_START, payload: smurfData})
 
         axios
-            .post('/smurfs')
+            .post('http://localhost:3333/smurfs', smurfData)
             .then(res => {
-                dispatch({type: POST_SMURF_SUCCESS, payload: {
-            
-                }})
+                dispatch({type: POST_SMURF_SUCCESS, payload: res})
+            })
+            .catch(error => {
+                dispatch({type: POST_SMURF_ERROR, payload: error })
             })
     }
 }

@@ -5,9 +5,10 @@ import {
 } from '../actions/postRequest';
 
 const initialState = {
-    smurfs: null,
-    error: null,
-    loading: false
+    smurfs: [],
+    name: null,
+    age: null,
+    height: null
 }
 
 export const postRequest = (state=initialState, action) => {
@@ -15,6 +16,10 @@ export const postRequest = (state=initialState, action) => {
         case POST_SMURF_START:
             return {
                 ...state, 
+                smurfs: [
+                    ...state.smurfs,
+                    action.payload
+                ],
                 loading: true
             };
         case POST_SMURF_SUCCESS: 
