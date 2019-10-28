@@ -28,8 +28,7 @@ function Form(props) {
         setHeight(e.target.value)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         props.postRequest(
             post
         );
