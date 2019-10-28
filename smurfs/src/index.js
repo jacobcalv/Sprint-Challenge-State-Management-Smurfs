@@ -6,11 +6,9 @@ import logger from 'redux-logger'
 import { combineReducers, applyMiddleware, createStore } from 'redux';
 import thunk from "redux-thunk";
 import {Provider} from 'react-redux';
-import {getRequest, postRequest} from './reducers'
+import rootReducer from './reducers'
 
-const rootReducer = combineReducers({
-    getRequest, postRequest
-})
+
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
