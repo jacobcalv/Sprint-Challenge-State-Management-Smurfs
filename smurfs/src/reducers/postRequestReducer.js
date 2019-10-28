@@ -4,12 +4,7 @@ import {
     POST_SMURF_ERROR
 } from '../actions/postRequest';
 
-const initialState = {
-    smurfs: [],
-    name: null,
-    age: null,
-    height: null
-}
+import {initialState} from './state'
 
 export const postRequest = (state=initialState, action) => {
     switch(action.type) {

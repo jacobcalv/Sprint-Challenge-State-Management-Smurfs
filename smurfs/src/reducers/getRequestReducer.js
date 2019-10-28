@@ -5,11 +5,7 @@ import {
 } from '../actions/getRequest'
 
 
-const initialState = {
-    smurfs: null,
-    error: null,
-    loading: false
-}
+import {initialState} from './state'
 
 export const getRequest = (state=initialState, action) => {
     switch(action.type) {
@@ -21,7 +17,7 @@ export const getRequest = (state=initialState, action) => {
         case GET_SMURF_SUCCESS: 
             return {
                 ...state,
-                smurfs: action.payload,
+                smurfs: [...state.smurfs, ...action.payload],
                 loading: false
             };
         case GET_SMURF_ERROR: 

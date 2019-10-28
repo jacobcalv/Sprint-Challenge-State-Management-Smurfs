@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux';
 import {getRequest} from '../actions/getRequest'
 import {Card} from 'semantic-ui-react'
@@ -8,8 +8,7 @@ function SmurfData(props) {
     useEffect(()=>{
         props.getRequest()
     },[])
-    console.log(props)
-
+    
     const Image = styled.img`
         height: 20rem;
     `
@@ -27,7 +26,7 @@ function SmurfData(props) {
         <Header>Your Village</Header>
         <Container>
             {props.smurfs && props.smurfs.map((smurf, index) => (
-                <Card>
+                <Card key={index}>
                     <Image src='http://pngimg.com/uploads/smurf/smurf_PNG35.png' wrapped ui={false}/>
                     <Card.Content>
                         <Card.Header>{smurf.name}</Card.Header>

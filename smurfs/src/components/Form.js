@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {postRequest} from '../actions/postRequest'
-import {getRequest} from '../actions/getRequest'
+
 
 function Form(props) {
     const [smurfName, setSmurfName] = useState('')

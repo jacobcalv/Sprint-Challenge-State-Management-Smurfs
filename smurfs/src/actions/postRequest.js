@@ -6,7 +6,7 @@ export const POST_SMURF_ERROR= 'POST_SMURF_ERROR'
 
 export function postRequest(smurfData){
     return dispatch => {
-        dispatch({type: POST_SMURF_START, payload: smurfData})
+        dispatch({type: POST_SMURF_START})
 
         axios
             .post('http://localhost:3333/smurfs', smurfData)
